@@ -1,0 +1,81 @@
+.login-page {
+  padding: 2vh 6vw;
+}
+.sub-head {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  .sub-head-title {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .sub-head-desc {
+    color: #808080;
+    margin-top: 0;
+  }
+}
+
+.login-form {
+  .form-item {
+    margin-top: 1vh;
+    input {
+      font-size: 1.125rem;
+      height: 2.2rem;
+    }
+    .ant-input-prefix,
+    .ant-input-affix-wrapper {
+      font-size: 1.5rem;
+    }
+    .ant-input-prefix {
+      margin-right: 2vw;
+    }
+    .ant-form-item-label {
+      label {
+        height: auto;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--black, #242424);
+        line-height: normal;
+      }
+
+      label::before {
+        display: none !important;
+      }
+    }
+  }
+  .form-item-password {
+    margin-bottom: 0;
+  }
+  .form-item-help {
+    .ant-form-item-control-input-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .login-form-forgot {
+      color: var(--Style2, #d1d1d1);
+    }
+  }
+
+  .agreements {
+    color: var(--Style2, #d1d1d1);
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    .user-agreement {
+      color: var(--black, #242424);
+      text-decoration: underline;
+    }
+  }
+
+  .register {
+    color: var(--primary-color, #464feb);
+  }
+}
+
+.login-button {
+  margin-top: 2vh;
+  margin-bottom: 1.5vh;
+}

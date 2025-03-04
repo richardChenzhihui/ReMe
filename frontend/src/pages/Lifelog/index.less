@@ -1,0 +1,77 @@
+.lifelog-page {
+  .lifelog-head {
+    color: rgba(36, 36, 36, 0.92);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 4vh;
+  }
+  .year-select {
+    margin-top: 2vh;
+
+    .ant-select-selector .ant-select-selection-item {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--Style3, #808080);
+    }
+
+    .ant-select-arrow .anticon {
+      color: var(--Style3, #808080);
+      font-size: 1rem;
+    }
+  }
+  .lifelog-list {
+    width: 92vw;
+    height: 52vh;
+    margin-top: 3vh;
+
+    .lifelog-snapshot {
+      width: 82%;
+      background-size: cover !important;
+      box-shadow: 0px 4px 5.7px 0px rgba(0, 0, 0, 0.17);
+
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+
+      .date {
+        margin: 3vh 4vw;
+        border-radius: var(--Size-100, 0.5rem);
+        background: var(--black, #242424);
+        padding: 1.5vh 3vw;
+        font-size: 1.25rem;
+        color: var(--Style, #f3f3f3);
+        font-weight: 600;
+        text-align: left;
+        .day {
+          font-size: 2rem;
+        }
+      }
+      .bottom-div {
+        width: 100%;
+        padding: 3vh 4vw;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        border-radius: 0 0 1rem 1rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000100);
+        .title {
+          color: var(--white2, #fafafa);
+          font-size: 1.6rem;
+          font-weight: 600;
+          text-align: left;
+        }
+        .detail-button {
+          margin-top: 1.2vh;
+          margin-bottom: 2vh;
+          padding: 0.8vh 6vw;
+          width: fit-content;
+          border: 0;
+          color: var(--white, #ffffff);
+          background: var(--white-40, rgba(255, 255, 255, 0.4));
+        }
+      }
+    }
+  }
+}
