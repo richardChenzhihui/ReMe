@@ -1,0 +1,239 @@
+.draw-page {
+  height: 100%;
+  background: #eaeaeb;
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .draw-task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3vh auto;
+    padding: 1.2vh 4%;
+    width: 86%;
+
+    background: var(--Style, #f3f3f3);
+    color: var(--black, #242424);
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    .draw-task-audio {
+      margin-right: 0.5rem;
+    }
+  }
+  .draw-toobar {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2vh;
+    padding: 1vh 0;
+    background: var(--Style, #f3f3f3);
+    border-radius: 6vh;
+    box-shadow:
+      0px 1px 10px 0px rgba(0, 0, 0, 0.09),
+      0px -2px 4.3px 0px rgba(0, 0, 0, 0.1),
+      0px 0px 76.8px 0px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    .draw-icon {
+      font-size: 1.6rem;
+      margin: 0 5%;
+    }
+
+    .question {
+      height: 3vh;
+      width: 3vh;
+      border-radius: 50%;
+      background: var(--secondary-color, #5b7fff);
+
+      position: absolute;
+      right: calc(-3vh - 2%);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .question-icon {
+      }
+    }
+  }
+  .submit-button {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    border-radius: 10px;
+    box-shadow:
+      0px 1px 2px 0px rgba(0, 0, 0, 0.14),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    width: 80%;
+  }
+}
+
+.draw-mask {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+
+  z-index: 99999;
+
+  .close-button {
+    margin-top: 3vh;
+    margin-left: 85%;
+    background-color: var(--third-color, #b0beff);
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 4px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tips-container {
+    margin-top: 2vh;
+
+    .tip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .audio-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: var(--third-color, #b0beff);
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+      }
+
+      .tip-text {
+        margin-top: 4vh;
+        width: 80%;
+        height: 10vh;
+        font-size: 1.25rem;
+        color: var(--black, #242424);
+      }
+      .tip-gif {
+        width: 75%;
+        border-radius: 20px;
+        margin-bottom: 5vh;
+      }
+    }
+  }
+
+  .get-button {
+    border-radius: 10px;
+    width: 75%;
+    margin-top: 3vh;
+  }
+}
+
+.feedback-popup {
+  border-radius: 40px 40px 0 0;
+  background: var(--white2, #fafafa);
+
+  /* copilot */
+  box-shadow: 0px 1px 24.9px 0px rgba(0, 0, 0, 0.25);
+  padding: 3rem 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+
+  .rating-group {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rating-item {
+      position: relative;
+      height: 4.5rem;
+      .back-rating {
+        font-size: 4.5rem;
+      }
+      .rating {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0rem;
+        animation: growText 0.7s ease-in forwards;
+      }
+    }
+    .rating-item:nth-child(1) .rating {
+      animation-delay: 0.2s;
+    }
+
+    .rating-item:nth-child(2) .rating {
+      animation-delay: 1.2s;
+    }
+
+    .rating-item:nth-child(3) .rating {
+      animation-delay: 2.2s;
+    }
+
+    @keyframes growText {
+      0% {
+        font-size: 0rem;
+      }
+      100% {
+        font-size: 4.5rem;
+      }
+    }
+  }
+
+  .feedback-info {
+    margin-top: 2.5vh;
+    opacity: 0;
+    animation: opacityChange 0.2s ease-in forwards;
+  }
+
+  @keyframes opacityChange {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 2;
+    }
+  }
+
+  .feedback-audio {
+    margin-bottom: 1.5vh;
+  }
+
+  .feedback-text {
+    font-size: 1.25rem;
+    color: var(--black, #242424);
+    margin-bottom: 3vh;
+  }
+
+  .continue-button {
+    border-radius: 10px;
+    box-shadow:
+      0px 1px 2px 0px rgba(0, 0, 0, 0.14),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    width: 100%;
+  }
+
+  .back-button {
+    margin-top: 1.5vh;
+    border: 3px solid var(--primary-color, #464feb);
+    color: var(--primary-color, #464feb);
+  }
+
+  .loading {
+    font-size: 1.5rem;
+  }
+}
