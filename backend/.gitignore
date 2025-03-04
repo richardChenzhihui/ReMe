@@ -1,0 +1,44 @@
+# Flask
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+*.pyz
+*.pyw
+*.pyz/
+*.pyw/
+*.egg-info/
+*.egg/
+*.whl
+*.dist-info/
+.env
+
+# SQL Database
+*.db
+*.sqlite
+*.sql
+*.sql.gz
+
+# Logs
+*.log
+*.log.*
+logs/
+
+# Virtual environment
+venv/
+
+temp.ipynb
+
+app/files/*
+app/static/*
+!app/files/.gitkeep
+!app/static/.gitkeep
+!app/static/materials/
+!app/static/materials/**
+#!app/static/unattached/
+!app/static/unattached/.gitkeep
+#!app/static/lifelogs/
+!app/static/lifelogs/.gitkeep
+#!app/static/chat_sessions/
+!app/static/chat_sessions/.gitkeep

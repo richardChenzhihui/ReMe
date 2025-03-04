@@ -1,33 +1,50 @@
-# Project
+# <img src="docs/logo.png" alt="ReMe logo" style="height:30px; vertical-align:middle;"> REME: Personalized Cognitive Training Framework
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+<h4 align="center">
+   <a href="https://www.microsoft.com/en-us/research/project/reme/" target="_blank"> 🔍 Project Page</a>  | 
+   <a href="" target="">📖 Quick Start</a> | 
+   <a href="#-paperwork-list"> 📃 Papers </a>
+</h3>
 
-As the maintainer of this project, please make a few updates:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+# 🌟 Introduction
+<div align="center">
+      <img src="docs/heading.jpg" alt="ReMe Framework Structure" style="width:80%; ">
+</div>
 
-## Contributing
+With the emergence of new capabilities in ambient sensing technology and Large Language Models, we were inspired to create **ReMe**, a personalized cognitive training framework designed to create AI chatbots that facilitate personalized cognitive training. It has the potential to be highly beneficial in the area of cognitive health, such as in the prevention and early intervention of Alzheimer’s disease.
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+# ⚡ Quick start
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## setup backend
+```
+1. Install the required dependencies
+2. Initialize the database
 
-## Trademarks
+   python manage.py init_db
+   python manage.py seed_db
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+3. Configure environment variables in `.env` file
+4. Run flask app for ReMe backend
+
+   python app/run.py
+
+5. Test the API
+
+   python test/api_test.py
+
+```
+
+# 🏭 Scenarios
+
+# 📃 Paper/Work list
+
+## 📊 Benchmark
+
+
+# 🤝 Contributing
+
+
+# ⚖️ Legal disclaimer
+<p style="line-height: 1; font-style: italic;">The RD-agent is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. The RD-agent is aimed to facilitate research and development process in the financial industry and not ready-to-use for any financial investment or advice. Users shall independently assess and test the risks of the RD-agent in a specific use scenario, ensure the responsible use of AI technology, including but not limited to developing and integrating risk mitigation measures, and comply with all applicable laws and regulations in all applicable jurisdictions. The RD-agent does not provide financial opinions or reflect the opinions of Microsoft, nor is it designed to replace the role of qualified financial professionals in formulating, assessing, and approving finance products. The inputs and outputs of the RD-agent belong to the users and users shall assume all liability under any theory of liability, whether in contract, torts, regulatory, negligence, products liability, or otherwise, associated with use of the RD-agent and any inputs and outputs thereof.</p>
