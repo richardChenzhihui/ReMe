@@ -36,7 +36,7 @@ def create_chat_session():
     try:
         chat_session, instruction_message = chat_service.create_chat_session(session["user_id"], puzzle_name, language)
     except ValueError as e:
-        return jsonify({"code": 400, "message": str(e)}), 400
+        return jsonify({"code": 400, "message": "Value Error"}), 400
 
     return jsonify(
         {
