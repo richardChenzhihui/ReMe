@@ -39,9 +39,13 @@ class AzureTTS:
         timestamp_ms = int(time.time() * 1000)
         random_filename = f"{timestamp_ms}_chatbot_reply_{uuid.uuid4()}.mp3"
 
-        if not os.path.exists(os.path.join(static_folder, f"{sub_folder}")):
-            os.makedirs(os.path.join(static_folder, f"{sub_folder}"))
-        file_path = os.path.join(static_folder, f"{sub_folder}", random_filename)
+        outpath = os.path.normpath(os.path.join(static_folder, f"{sub_folder}"))
+        if not outpath.startswith(static_folder):
+            return Exception("Invalid subfolder name")
+        
+        if not os.path.exists(outpath)):
+            os.makedirs(outpath)
+        file_path = os.path.join(outpath, random_filename)
 
         # config
         audio_config = speechsdk.audio.AudioOutputConfig(filename=file_path)

@@ -44,7 +44,11 @@ def save_base64_to_file(
 
     # File save path
     static_folder = current_app.static_folder
-    file_path = os.path.join(static_folder, f"{sub_folder}", file_name)
+    full_path = os.path.normpath(os.path.join(static_folder, f"{sub_folder}",file_name))
+    if not full_path.startswith(static_folder):
+        raise Exception("Invalid subfolder name")
+    
+    file_path = full_path
 
     # Ensure the static directory exists
     os.makedirs(static_folder, exist_ok=True)

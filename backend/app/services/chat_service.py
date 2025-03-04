@@ -58,16 +58,19 @@ class ChatService:
         )
 
         instruction_message = puzzle_instance["instruction_message"]
+        
+        session_record_path = os.path.normpath(os.path.join(current_app.static_folder, "chat_sessions", f"{chat_session.id}"))
+        if not session_record_path.startswith(current_app.static_folder):
+            raise Exception("Invalid subfolder name")
+        if not os.path.exists(session_record_path):
+            os.makedirs(session_record_path)
 
         try:
             db.session.add(chat_session)
             db.session.commit()
-            static_folder = current_app.static_folder
-            if not os.path.exists(os.path.join(static_folder, "chat_sessions", f"{chat_session.id}")):
-                os.makedirs(os.path.join(static_folder, "chat_sessions", f"{chat_session.id}"))
             # log puzzle_instance instruction_message
             with open(
-                os.path.join(static_folder, "chat_sessions", f"{chat_session.id}", f"{int(time.time())*1000}_instruction_message.json"), "w", encoding='utf-8'
+                os.path.join(session_record_path, f"{int(time.time())*1000}_instruction_message.json"), "w", encoding='utf-8'
             ) as f:
                 json.dump(
                     {
@@ -127,11 +130,14 @@ class ChatService:
         print(parsed_content)
 
         # log user chat message
-        static_folder = current_app.static_folder
-        if not os.path.exists(os.path.join(static_folder, "chat_sessions", f"{session_id}")):
-            os.makedirs(os.path.join(static_folder, "chat_sessions", f"{session_id}"))
+        session_record_path = os.path.normpath(os.path.join(current_app.static_folder, "chat_sessions", f"{chat_session.id}"))
+        if not session_record_path.startswith(current_app.static_folder):
+            raise Exception("Invalid subfolder name")
+        if not os.path.exists(session_record_path):
+            os.makedirs(session_record_path)
+            
         with open(
-            os.path.join(static_folder, "chat_sessions", f"{session_id}", f"{int(time.time()*1000)}_user_chat_message.json"), "w", encoding='utf-8'
+            os.path.join(session_record_path, f"{int(time.time()*1000)}_user_chat_message.json"), "w", encoding='utf-8'
         ) as f:
             json.dump(
                 {
@@ -183,7 +189,7 @@ class ChatService:
             output_message["content"].append({"type": "audio", "data": output_audio_url})
 
         # log GPT response and output_message
-        with open(os.path.join(static_folder, "chat_sessions", f"{session_id}", f"{int(time.time()*1000)}_output_message.json"), "w", encoding='utf-8') as f:
+        with open(os.path.join(session_record_path, f"{int(time.time()*1000)}_output_message.json"), "w", encoding='utf-8') as f:
             json.dump(
                 {
                     "model_response": response_content,
