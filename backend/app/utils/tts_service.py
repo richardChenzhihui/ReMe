@@ -43,7 +43,7 @@ class AzureTTS:
         if not outpath.startswith(static_folder):
             return Exception("Invalid subfolder name")
         
-        if not os.path.exists(outpath)):
+        if not os.path.exists(outpath):
             os.makedirs(outpath)
         file_path = os.path.join(outpath, random_filename)
 
