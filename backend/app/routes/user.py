@@ -33,7 +33,7 @@ def register():
         session["user_id"] = user.id
         return jsonify({"code": 200, "message": "success", "data": {"user_id": user.id, "phone": user.phone}})
     except PhoneAlreadyExistsError as e:
-        return jsonify({"code": 400, "message": "Phone Already Exists"), 400
+        return jsonify({"code": 400, "message": "Phone Already Exists"}), 400
     except ValueError as e:
         return jsonify({"code": 400, "message": "Value Error"}), 400
     except SQLAlchemyError as e:
