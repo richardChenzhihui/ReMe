@@ -1,7 +1,7 @@
 
 <h1 align="center">
 <img src="docs/logo.jpg" alt="ReMe logo" > <br>
-ReMe: Personalized Cognitive Training Framework
+ReMe: A Personalized Cognitive Training Framework
 </h1>
 
 <h4 align="center">
