@@ -17,7 +17,7 @@ This documentation provides an overview of the ReMe backend service, including A
 3. Configure environment variables in `.env` file
 4. Run flask app for ReMe backend
    ```
-   python app/run.py
+   python run.py
    ```
 5. Test the API
    ```
