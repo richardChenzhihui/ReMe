@@ -8,3 +8,5 @@ openai
 azure-cognitiveservices-speech
 emoji
 waitress
+Pillow
+beautifulsoup4
