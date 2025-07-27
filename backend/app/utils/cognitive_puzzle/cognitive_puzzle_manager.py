@@ -27,5 +27,5 @@ class CognitivePuzzleManager:
 
     def get_puzzle_maker(self, name, language=None):
         if not language:
-            language = 'en-US'
+            language = 'zh-CN'
         return self.puzzles.get(name+'_'+language)
