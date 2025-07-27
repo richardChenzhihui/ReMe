@@ -22,7 +22,7 @@ i18n
         url: enUsUrl,
       },
     },
-    fallbackLng: "en-US",
+    fallbackLng: "zh-CN",
     lng: "zh-CN",
   });
 

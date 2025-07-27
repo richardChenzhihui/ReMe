@@ -7,7 +7,7 @@ class ChatSession(db.Model):
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     puzzle_name = db.Column(db.String(128), nullable=False)
-    language = db.Column(db.String(32), default="en-US", nullable=False)
+    language = db.Column(db.String(32), default="zh-CN", nullable=False)
     timestamp = db.Column(db.Integer, nullable=False)
     active = db.Column(db.Boolean, default=True)
     model_chat_history = db.Column(db.JSON, nullable=False)
